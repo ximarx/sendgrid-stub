@@ -3,7 +3,7 @@ Test the SendGrid stub
 */
 
 var should = require('should');
-var stub = require('./sendgrid-stub.js');
+var stub = require('./index');
 var async = require('async');
 
 describe("The SendGrid stub", function(){
@@ -36,7 +36,7 @@ describe("The SendGrid stub", function(){
 				 			complete()
 				 		else
 				 			complete(message)
-				 	});	
+				 	});
 			},
 			function(complete){
 				setTimeout(function() {
@@ -53,9 +53,9 @@ describe("The SendGrid stub", function(){
 			],
 			function(err){
 				done(err);
-			} 
+			}
 		)
-		
+
 	})
 
 	it("can send e-mails and the client can read them", function(done){
@@ -74,7 +74,7 @@ describe("The SendGrid stub", function(){
 				 			complete()
 				 		else
 				 			complete(message)
-				 	});	
+				 	});
 			},
 			function(complete){
 				setTimeout(function() {
@@ -88,7 +88,7 @@ describe("The SendGrid stub", function(){
 				 			complete()
 				 		else
 				 			complete(message)
-				 	});	
+				 	});
 			},
 			function(complete){
 				setTimeout(function() {
@@ -104,9 +104,9 @@ describe("The SendGrid stub", function(){
 			],
 			function(err){
 				done(err);
-			} 
+			}
 		)
-		
+
 	})
 
 	it("Client can read emails even when there are none", function(done){
@@ -128,8 +128,8 @@ describe("The SendGrid stub", function(){
 			],
 			function(err){
 				done(err);
-			} 
+			}
 		)
-		
+
 	})
 })
