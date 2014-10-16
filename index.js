@@ -24,6 +24,7 @@ function SendGrid(user, pass, silence){
 		 	JSON.stringify(email),
 		 	'utf8',
 		 	callback
+		);
 	}
 
 	/*
