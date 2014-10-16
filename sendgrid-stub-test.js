@@ -3,6 +3,7 @@ Test the SendGrid stub
 */
 
 var should = require('should');
+var assert = require("assert");
 var stub = require('./index');
 var async = require('async');
 
@@ -97,7 +98,7 @@ describe("The SendGrid stub", function(){
 			},
 			function(complete){
 				mailclient.getAll(function(err, data){
-					(data.length == 2).should.be.true
+					(data.length == 1).should.be.true
 					complete(err);
 				})
 			}

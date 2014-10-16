@@ -1,21 +1,29 @@
-{ "name" : "sendgrid-stub",
-	"version" : "0.0.3",
-	"author": "Vincens Riber Mink <vincens@usepaddle.com>",
-  	"description": "A sendgrid stub which sends and reads emails locally for testing",
-	"repository": {
-	    "type": "git",
-	    "url": "https://github.com/VRMink/sendgrid-stub"
-	},
-	"dependencies": {
-		"async": "0.1.16",
-		"underscore" : "1.4.3"
-	},
-	"devDependencies": {
-		"mocha" : "1.7.0",
-		"should" : "1.2.1"
-	},
-	"license": "Creative Commons Attribution 3.0 Unported ",
-	"engines": {
-    	"node": ">=0.6"
-  	}
+{
+  "name": "sendgrid-stub",
+  "version": "0.0.4",
+  "authors": [
+    "Vincens Riber Mink <vincens@usepaddle.com>",
+    "David Benhaim <david@markforged.com>"
+  ],
+  "description": "A sendgrid stub which sends and reads emails locally for testing",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidbenhaim/sendgrid-stub"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha sendgrid-stub-test.js"
+  },
+  "dependencies": {
+    "async": "0.1.16",
+    "underscore": "1.4.3"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.5",
+    "should": "1.2.1"
+  },
+  "license": "Creative Commons Attribution 3.0 Unported ",
+  "engines": {
+    "node": ">=0.6"
+  }
 }

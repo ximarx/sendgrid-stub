@@ -20,7 +20,7 @@ function SendGrid(user, pass, silence){
 
 		// Write new file names after timestamp
 		fs.writeFile(
-			mailDestination+Date.now()+".json",
+			mailDestination+"email.json",
 		 	JSON.stringify(email),
 		 	'utf8',
 		 	callback
