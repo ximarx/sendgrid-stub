@@ -5,12 +5,20 @@ var _ = require('underscore');
 SendGrid Stub
 */
 
-function SendGrid(user, pass, silence){
-	var mailDestination = process.cwd()+"/sendgridEmails/";
+function SendGrid(user, pass, silence, mailDestination){
+	var mailDestination = mailDestination || process.cwd()+"/sendgridEmails/";
 	if(!silence)
 		console.log("SendGrid Stub initialized, mails go to " + mailDestination)
 
 	this.serializeEmail = function(email, callback){
+
+		// provide support for sendgrid.Email instance
+		// Check if email object prototype has .addHeader method
+		if (email.toWebFormat && _.isFunction(email.toWebFormat)) {
+			// replace sendgrid.Email with javascript object
+			email = email.toWebFormat();
+		}
+
 		//Create mail destination path
 		try{
 			fs.mkdirSync(mailDestination)
@@ -64,7 +72,7 @@ Stub Mail client to read emails sent
 function MailClient(mailDest){
 	var mailDestination = process.cwd()+"/sendgridEmails/";
 	if(mailDest)
-		mailDestination = process.cwd()+"/"+mailDest;
+		mailDestination = mailDest;
 	//Create mail destination path, to make sure it is there
 	try{
 		fs.mkdirSync(mailDestination)
